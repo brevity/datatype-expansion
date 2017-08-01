@@ -15,7 +15,13 @@ module.exports = {
         example: 'Great'
       },
       length: 'string'
-    }
+    },
+    dependencies: {
+      beep: 'boop'
+    },
+    exclusiveMaximum: false,
+    exclusiveMinimum: true,
+    additionalItems: false
   },
   Album: {
     properties: {

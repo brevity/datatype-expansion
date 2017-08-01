@@ -184,6 +184,15 @@ function expandObject (form, bindings, context) {
   if (form.additionalProperties === undefined) {
     form.additionalProperties = true
   }
+  // Drop properties with no raml counterpart.
+  [
+    'dependencies',
+    'exclusiveMaximum',
+    'exclusiveMinimum',
+    'additionalItems'
+  ].map(propertyToDrop => {
+    delete form[propertyToDrop]
+  })
   return form
 }
 
