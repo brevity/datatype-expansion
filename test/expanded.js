@@ -19,3 +19,12 @@ describe('expandedForm()', function () {
     })
   })
 })
+describe('omissions', function () {
+  expandedForm(types['Song'], types, function (err, expForm) {
+    if (err) console.error(err)
+    expect(expForm.dependencies).to.equal(undefined)
+    expect(expForm.exclusiveMaximum).to.equal(undefined)
+    expect(expForm.exclusiveMinimum).to.equal(undefined)
+    expect(expForm.additionalItems).to.equal(undefined)
+  })
+})
